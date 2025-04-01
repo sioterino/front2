@@ -33,29 +33,29 @@ console.log(carrao.ano, carrao.modelo, carrao.marca)
 *  FUNÇÃO CONSTRUTOR
 */
 
-// function Animal(tipo, nome, som) {
-//     this.tipo = tipo
-//     this.nome = nome
-//     this.som = som
-// }
+function Animal(tipo, nome, som) {
+    this.tipo = tipo;
+    this.nome = nome;
+    this.som = som;
+}
 
-// Animal.prototype = {
-//     emitirSom() {
-//         console.log(`O ${this.nome} faz ${this.som}.`)
-//     },
-//     locomover() {
-//         console.log(`O ${this.tipo} se locomove.`)
-//     },
-//     comer() {
-//         console.log(`O ${this.nome} come.`)
-//     }
-// }
+Animal.prototype = {
+    emitirSom() {
+        console.log(`O ${this.nome} faz ${this.som}.`);
+    },
+    locomover() {
+        console.log(`O ${this.tipo} se locomove.`);
+    },
+    comer() {
+        console.log(`O ${this.nome} come.`);
+    }
+}
 
-let gato = Animal('gato', 'bento', 'miau')
-gato.emitirSom()
-gato.locomover()
-gato.comer()
-console.log(gato.tipo, gato.nome, gato.som)
+let gato = new Animal('gato', 'Bento', 'miau');
+gato.emitirSom();
+gato.locomover();
+gato.comer();
+console.log(gato.tipo, gato.nome, gato.som);
 
 
 /*
