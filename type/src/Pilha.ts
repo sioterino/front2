@@ -1,41 +1,50 @@
-class Stack<T> {
+interface Stack<T> {
+    size(): number,
+    push(item: T): void,
+    pop(): T | undefined,
+    top(): T,
+    isEmpty(): boolean,
+    clear(): void,
+}
 
-    area: T[] = []
+class ArrayStack<T> implements Stack<T>{
 
-    public size(): number {
-        return this.area.length
+    private items: T[] = [];
+
+    size(): number {
+        return this.items.length;
     }
 
-    public push(item: T): void {
-        this.area.push(item)
+    push(item: T): void {
+        this.items.push(item);
     }
 
-    public pop() {
-        return this.area.pop()
+    pop(): T | undefined {
+        return this.items.pop();
     }
 
-    public top() {
-        return this.area[this.area.length -1]
+    top() {
+        return this.items[this.items.length -1];
     }
 
-    public isEmpty(): boolean {
-        return this.area.length === 0
+    isEmpty(): boolean {
+        return this.items.length === 0;
     }
 
-    public clear(): void {
+    clear(): void {
         while (!this.isEmpty()) {
-            this.area.pop()
+            this.items.pop();
         }
     }
 
 }
 
-const stack: Stack<number> = new Stack<number>();
-stack.push(1)
-stack.push(2)
-stack.push(3)
-stack.push(4)
+const stack: ArrayStack<number> = new ArrayStack<number>();
+stack.push(1);
+stack.push(2);
+stack.push(3);
+stack.push(4);
 
 while(!stack.isEmpty()) {
-    console.log(stack.pop())
+    console.log(stack.pop());
 }

@@ -1,30 +1,30 @@
 "use strict";
-class Stack {
+class ArrayStack {
     constructor() {
-        this.area = [];
+        this.items = [];
     }
     size() {
-        return this.area.length;
+        return this.items.length;
     }
     push(item) {
-        this.area.push(item);
+        this.items.push(item);
     }
     pop() {
-        return this.area.pop();
+        return this.items.pop();
     }
     top() {
-        return this.area[this.area.length - 1];
+        return this.items[this.items.length - 1];
     }
     isEmpty() {
-        return this.area.length === 0;
+        return this.items.length === 0;
     }
     clear() {
         while (!this.isEmpty()) {
-            this.area.pop();
+            this.items.pop();
         }
     }
 }
-const stack = new Stack();
+const stack = new ArrayStack();
 stack.push(1);
 stack.push(2);
 stack.push(3);
