@@ -2,9 +2,16 @@
 /**
  *          1. crie uma função genérica que retorne o primeiro elemento de um array de tipo qualquer
  **/
-/**
- *          2. crie uma função ecibir() com sobrecarga que receba um número ou string e retorne uma mensagem diferente para cada tipo
- **/
+const array = [...'abcdefghijklmopqrstuvwxyz'];
+const primeiroElemento = (array) => array[0];
+console.log(primeiroElemento(array));
+const exibir = a => {
+    if (typeof a === 'string') {
+        return `'${a}' é string`;
+    }
+    return `'${a}' é number`;
+};
+console.log(exibir("A"));
 /**
  *          3. crie uma função sobrecarregada combinar que:
  *              - some doi números, ou
