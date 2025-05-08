@@ -1,0 +1,20 @@
+{
+  "name": "projeto1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc -w",
+    "server": "live-server ./dist --port=8080",
+    "start": "npm run compile & npm run server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.15.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "live-server": "^1.2.2"
+  }
+}
