@@ -1,17 +1,13 @@
+import Input from "../Input"
 
 const Form = () => {
 
     return (
         <form>
-
-            <label htmlFor="nome">Nome</label>
-            <input type="text" id="nome" required/>
-
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" required/>
+            <Input text="Nome" type="text" name="nome" id="nome" required={true}></Input>
+            <Input text="Email" type="email" name="email" id="email" required={true}></Input>
 
             <button type="submit">Enviar</button>
-
         </form>
     )
 
