@@ -1,28 +1,20 @@
 
+import { FaTrashAlt } from "react-icons/fa";
+
+import type { iRecipe } from '../../interfaces/Recipe'
+import Rating from "../Rating";
+
 import './style.css'
 
-interface IngredientsObject {
-    nome: string,
-    quantidade: number,
-    medida: string
-}
-
-interface RecipeObject {
-    nome: string,
-    ingredientes:IngredientsObject[],
-    instrucoes: string[]
-
-}
-
-const Recipe = ({ nome, ingredientes, instrucoes }: RecipeObject) => {
+const Recipe = ({ nome, ingredientes, instrucoes }: iRecipe) => {
 
     return (
-        <article className="receita">
+        <article className="recipe">
             <h2>{nome}</h2>
 
             <h3>Ingredientes</h3>
             <ul>
-                {ingredientes.map(({ nome, quantidade, medida }: IngredientsObject, i) => (
+                {ingredientes.map(({ nome, quantidade, medida }, i) => (
                     <li key={i} ><strong>{nome}</strong>: {quantidade} {medida}</li>
                 ))}
             </ul>
@@ -31,6 +23,11 @@ const Recipe = ({ nome, ingredientes, instrucoes }: RecipeObject) => {
             <ol>
                 {instrucoes.map((inst, i) => ( <li key={i}>{inst}</li> ))}
             </ol>
+
+            <div className="recipe-footer">
+                <Rating/>
+                <FaTrashAlt style={{cursor: "pointer"}} />
+            </div>
         </article>
     )
 

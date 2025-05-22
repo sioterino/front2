@@ -1,23 +1,11 @@
 
 import Recipe from "../Recipe"
 import './style.css'
-
-interface IngredientsObject {
-    nome: string,
-    quantidade: number,
-    medida: string
-}
-
-interface RecipeObject {
-    nome: string,
-    ingredientes: IngredientsObject[],
-    instrucoes: string[]
-
-}
+import type { iRecipe } from "../../interfaces/Recipe"
 
 const Main = () => {
 
-    const receitas: RecipeObject[] = [
+    const receitas: iRecipe[] = [
         {
             nome: "Salmão Assado",
             ingredientes: [
@@ -57,7 +45,7 @@ const Main = () => {
     return (
         <main className="receitas">
 
-            {receitas.map(({ nome, ingredientes, instrucoes }: RecipeObject, i) => (
+            {receitas.map(({ nome, ingredientes, instrucoes }: iRecipe, i) => (
                 <Recipe 
                 key={i}
                 nome={nome}
